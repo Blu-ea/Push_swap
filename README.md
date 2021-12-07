@@ -36,6 +36,8 @@
 	- ss:
 	  -	Do sa and sb
 
+	- [ ] Done
+
 	- pa: Push on A
 	  -	push the first nbs of B on A
 	  		(nothing if B is empty)
@@ -43,12 +45,16 @@
 	  -	push the first nbs of B on A
 	  		(nothing if B is empty)
 
+	- [ ] Done
+
 	- ra: Rotate A
 	  -	Putt the first nbr of A in last and push up the other
 	- ra: Rotate B
 	  -	Putt the first nbr of B in last and push up the other
 	- rr:
 	  -	Do ra and rb
+
+	- [ ] Done
 
 	- rra: Rotate Reverse Rotate A
 	  -	Putt the last nbr of A in first and push down the other
