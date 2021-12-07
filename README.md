@@ -1,9 +1,8 @@
 # Push_swap
-push_swap program from 42 
+#### for 42 
   
-==================
-+	To do list	 +
-==================
+======================
++	To do list
 
 1: Makefile
 	name
@@ -18,6 +17,6 @@ push_swap program from 42
 
 4: No leaks
 
-==================
-+	Objectives   +
-==================
+
+======================
++	Objectives
