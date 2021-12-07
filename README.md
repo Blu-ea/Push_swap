@@ -62,3 +62,5 @@
 	  -	Putt the last nbr of B in first and push down the other
 	- rrr:
 	  -	Do rra and rrb
+
+- [ ] Done
