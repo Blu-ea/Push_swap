@@ -10,3 +10,29 @@
 #                                                                              #
 # **************************************************************************** #
 
+NAME = push_swap
+
+SRC = 
+
+OBJ = $(SRC:.c=.o)
+
+CC = gcc
+FLAGS = -Wall -Werror -Wextra
+
+INCLUDE_LIB = p_swap.h 
+INCLUDE_MAKE = Makefile
+
+%.o : %.c $(INCLUDE_LIB) $(INCLUDE_MAKE)
+	$(CC) $(FLAGS) -c $< -o $@
+
+all: $(NAME)
+
+$(NAME): 
+	ar rcs $(NAME) $(OBJS)
+
+
+clean:
+
+fclean: clean
+
+re: fclean all
