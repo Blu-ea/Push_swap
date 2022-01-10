@@ -12,7 +12,7 @@
 
 NAME = push_swap
 
-SRC = 
+SRC = src/*
 
 OBJ = $(SRC:.c=.o)
 
@@ -28,8 +28,8 @@ INCLUDE_MAKE = Makefile
 all: $(NAME)
 
 $(NAME): 
-	ar rcs $(NAME) $(OBJS)
-
+	ar rcs $(NAME) $(OBJ)
+	$(CC) $(OBJ) 
 
 clean:
 
