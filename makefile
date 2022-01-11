@@ -5,33 +5,36 @@
 #                                                     +:+ +:+         +:+      #
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/07 03:30:51 by amiguez           #+#    #+#              #
-#    Updated: 2021/12/07 03:30:51 by amiguez          ###   ########.fr        #
+#    Created: 2022/01/11 21:11:46 by amiguez           #+#    #+#              #
+#    Updated: 2022/01/11 21:56:14 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC = src/.c
-SRC_OBJ = $(SRC:.c=.o)
+SRC_PUSH = src/push_swap/*.c
+OBJ_PUSH = obj/push_swap/*.o
 
-CC = gcc
-FLAGS = -Wall -Werror -Wextra
+SRC_LIB = src/libft/*.c
+OBJ_LIB = obj/libft/*.o
 
-INCLUDE_LIB = p_swap.h 
-INCLUDE_MAKE = Makefile
+all : $(NAME)
 
-%.o : %.c $(INCLUDE_LIB) $(INCLUDE_MAKE)
-	$(CC) $(FLAGS) -c $< -o $@
+$(NAME) : 
+	@gcc -c $(SRC_PUSH)
+	@mv *.o obj/push_swap
+	@gcc -c $(SRC_LIB)
+	@mv *.o obj/libft
+	@echo Objets compiled and moved
+	@gcc $(OBJ_LIB) $(OBJ_PUSH) -o $(NAME)
 
-all: $(NAME)
+clean :
+	@rm $(OBJ_PUSH)
+	@rm $(OBJ_LIB)
+	@echo Objets Removed
 
-$(NAME): 
-	ar rcs $(NAME) $(OBJ)
-	$(CC) $(OBJ) 
+fclean : clean
+	rm $(NAME)
+	@echo Executable Removed
 
-clean:
-
-fclean: clean
-
-re: fclean all
+re : fclean all
