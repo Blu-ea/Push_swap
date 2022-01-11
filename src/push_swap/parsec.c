@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   parsec.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/07 07:55:03 by amiguez           #+#    #+#             */
-/*   Updated: 2021/12/07 07:55:03 by amiguez          ###   ########.fr       */
+/*   Created: 2021/12/19 20:04:51 by amiguez           #+#    #+#             */
+/*   Updated: 2022/01/10 13:04:39 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../p_swap.h"
+#include "p_swap.h"
 
-int	main(int argc, char **argv)
+int	ft_parsec(int argc, char **argv)
 {
-	if ( argc == 0 || ft_parsec(argc, argv) == 0)
-		return(0);
-		
+	int	i;
+	int	j;
+
+	i = 0;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if (!ft_atoi(argv[i]))
+			{
+				write(1, "Error,Bad argument", 18);
+				return (0);
+			}
+			j++;
+		}
+		i++;
+	}
 }

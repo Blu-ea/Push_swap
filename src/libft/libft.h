@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 18:41:40 by amiguez           #+#    #+#             */
-/*   Updated: 2021/11/10 18:42:01 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/01/10 11:20:45 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdlib.h> // malloc, free
 # include <string.h> // NULL et size_t
-// # include <unistd.h> // write
+# include <unistd.h> // write
 
 /*      PART 1      */
 

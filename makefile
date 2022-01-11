@@ -12,9 +12,8 @@
 
 NAME = push_swap
 
-SRC = src/*
-
-OBJ = $(SRC:.c=.o)
+SRC = src/.c
+SRC_OBJ = $(SRC:.c=.o)
 
 CC = gcc
 FLAGS = -Wall -Werror -Wextra
