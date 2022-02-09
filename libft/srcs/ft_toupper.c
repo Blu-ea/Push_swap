@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/07 07:55:03 by amiguez           #+#    #+#             */
-/*   Updated: 2022/01/11 21:30:04 by amiguez          ###   ########.fr       */
+/*   Created: 2021/11/04 01:06:11 by amiguez           #+#    #+#             */
+/*   Updated: 2022/02/09 09:36:27 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "p_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+int	ft_toupper(int c)
 {
-	// if ( argc == 0 || ft_parsec(argc, argv) == 0)
-		return(0);
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
 }
