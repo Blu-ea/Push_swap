@@ -6,7 +6,7 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 06:10:49 by amiguez           #+#    #+#              #
-#    Updated: 2022/02/09 09:37:47 by amiguez          ###   ########.fr        #
+#    Updated: 2022/02/09 11:13:47 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,14 +101,14 @@ NORMINETTE = $(shell norminette $(SRCS) | grep -i 'Error')
 
 all: $(NAME)
 
-
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
-	printf "$(ERASE)Compiling Libft : $(GREEN) Done $(END)"
+	printf "$(ERASE)Compiling Libft : $(GREEN) Done $(END)\n"
+
 ifeq ($(NORMINETTE),$(NORMITEST))
-	printf "\n$(GREEN)Everything is ok\n$(END)"
+	printf "$(GREEN)Everything is ok\n$(END)"
 else
-	printf "\n$(RED)THERE IS AN ERROR WITH NORMINETTE !!$(END)\n"
+	printf "$(RED)$(SUR)THERE IS AN ERROR WITH NORMINETTE IN LIBFT FILES !!$(END)\n"
 endif
 
 $(DIR_OBJS)/%.o: $(DIR_SRCS)/%.c $(INCS) Makefile | $(DIR_OBJS)
@@ -122,10 +122,11 @@ $(DIR_OBJS):
 
 clean	:
 	rm -rf $(DIR_OBJS)
+	printf "$(CYAN) /!\ $(END)Erasing .o in libft$(CYAN) /!\ \n$(END)"
 
 fclean	: clean
 	rm -rf $(NAME)
-
+	printf "$(RED) /!\ $(END)Erasing libft.a$(RED) /!\ \n$(END)"
 re		: fclean all
 
 .PHONY	: all clean fclean re 

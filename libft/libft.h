@@ -6,16 +6,16 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 18:41:40 by amiguez           #+#    #+#             */
-/*   Updated: 2022/02/09 08:32:30 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/02/09 11:38:09 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h> // malloc, free
+# include <stdlib.h> // malloc, free et exit 
 # include <string.h> // NULL et size_t
-# include <unistd.h> // write
+# include <unistd.h> // write et read
 
 typedef struct s_list
 {
