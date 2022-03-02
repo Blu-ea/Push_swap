@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 06:10:49 by amiguez           #+#    #+#              #
-#    Updated: 2022/02/09 11:13:47 by amiguez          ###   ########.fr        #
+#    Updated: 2022/03/02 19:10:54 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,13 @@ LST_SRCS := ft_atoi.c\
 			ft_lstdelone.c\
 			ft_lstclear.c\
 			ft_lstiter.c\
-			ft_lstmap.c
+			ft_lstmap.c\
+			ft_lstnew.c\
+			get_next_line_utils.c\
+			get_next_line.c\
+			ft_printf_p.c\
+			ft_printf_x.c\
+			ft_printf.c
 LST_OBJS :=	$(LST_SRCS:.c=.o)
 LST_INCS :=	libft.h
 

@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 18:41:40 by amiguez           #+#    #+#             */
-/*   Updated: 2022/02/09 11:38:09 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/03/02 18:55:02 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdlib.h> // malloc, free et exit 
 # include <string.h> // NULL et size_t
 # include <unistd.h> // write et read
+# include <limits.h> // OPEN_MAX
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -53,7 +55,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *s, int c);
 
 char	*ft_strjoin(char const *s1, char const *s2);
-char	**ft_split(char const *s, char c);
+char	**ft_split(char const *s, char c);;
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -73,5 +75,35 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+//########  Printf  #######//
+
+int		ft_printf(const char *s, ...);
+int		ft_trie(va_list ap, char type);
+int		ft_printchar(char format, char type);
+int		ft_printstr(char *ap);
+int		ft_printnbr(long long int n);
+int		ft_convertbase_x(unsigned int nb, char *base);
+int		ft_convertbase_p(unsigned long long int nb, char *base);
+void	ft_fill_str_x(char *nb_hex, unsigned int nb_int, char *base, int i);
+void	ft_fill_str_p(char *nb_hex, unsigned long long int nb_int,
+			char *base, int i);
+int		ft_calcsize_x(unsigned int nb);
+int		ft_calcsize_p(unsigned long long int nb);
+
+//#########  GNL  ##########//
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 0
+# endif
+
+char	*get_next_line(int fd);
+int		chek_nl(char *line);
+int		ft_strlen(const char *str);
+char	*ft_strdup(const char *src);
+char	*ret_nl(char *lni, int i);
+void	set_nl(char *line, char stat[BUFFER_SIZE + 1]);
+
+//#######################
 
 #endif

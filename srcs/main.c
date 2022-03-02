@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 08:37:52 by amiguez           #+#    #+#             */
-/*   Updated: 2022/02/25 20:02:41 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/03/02 19:27:28 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,48 @@ void	ft_free(t_stacks *stacks)
 
 void	ft_error(int i)
 {
-	write(0, "Error!", 6);
+	ft_printf(" Error :%d\n", i);
 	exit(i);
 }
 
 char	**ft_parsec(int argc, char **argv)
 {
 	char	**ret;
+	int		i;
 
+	i = 2;
 	if (argc == 1)
-		ft_error(1);
-	if (argc == 2)
-		ret = ft_split(argv[1], ' ');
-	else
-		ret = &argv[1];
+		exit(0);
+	ret = ft_split_space(argv[1]);
+	while (i < argc)
+	{
+		ret = ft_merge_d_str(ret, ft_split_space(argv[i]));
+		i++;
+	}
+	ft_forbiden_carac(ret);
 	return (ret);
 }
 
-//A corriger pour que ca prenne ./push_swap "0 1 2 3 3" 5 6 "123 2"
+void	ft_forbiden_carac(char **ret)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (ret[i])
+	{
+		j = 0;
+		if (ret[i][j] == '+' || ret[i][j] == '-')
+			j = 1;
+		while (ret[i][j])
+		{
+			if (!ft_isdigit(ret[i][j]))
+				ft_error(3);
+			j++;
+		}
+		i++;
+	}
+}
 
 int	main(int argc, char **argv)
 {

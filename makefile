@@ -6,7 +6,7 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 21:11:46 by amiguez           #+#    #+#              #
-#    Updated: 2022/02/25 19:19:50 by amiguez          ###   ########.fr        #
+#    Updated: 2022/02/28 19:39:17 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ NAME = push_swap
 
 LST_SRCS	:= main.c\
 			fill.c\
-			debug.c
+			debug.c\
+			isspace_split.c\
+			merge_char**.c
 LST_OBJS	:= $(LST_SRCS:.c=.o)
 LST_INCS	:= p_swap.h
 AR_LIBFT	:= libft.a
