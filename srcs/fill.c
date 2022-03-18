@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 18:54:41 by amiguez           #+#    #+#             */
-/*   Updated: 2022/03/02 17:27:55 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/03/18 09:19:00 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,66 @@ t_stacks	ft_fill_val(char **list_arg)
 	t_stacks	build_stacks;
 	int			i;
 
-	tab_print(list_arg);
 	i = 0;
 	build_stacks.max_len = ft_calc_size(list_arg);
-	printf("maxlen = %d\n", build_stacks.max_len);
 	build_stacks.a.stack = malloc(sizeof(int *) * build_stacks.max_len);
 	build_stacks.b.stack = malloc(sizeof(int *) * build_stacks.max_len);
 	while (i < build_stacks.max_len)
 	{
-		build_stacks.a.stack[i] = ft_atoi(list_arg[i]);
+		build_stacks.b.stack[i] = ft_atoi(list_arg[i]);
 		i++;
 	}
 	free(list_arg);
+	ft_no_double(build_stacks);
+	ft_set_index(&build_stacks);
 	return (build_stacks);
+}
+
+void	ft_set_index(t_stacks *build)
+{
+	int	i;
+	int	j;
+	int	count;
+
+	i = 0;
+	while (i < build -> max_len)
+	{
+		j = 0;
+		count = 0;
+		while (j < build -> max_len)
+		{
+			if (build -> b.stack[i] > build ->b.stack[j])
+				count++;
+			j++;
+		}
+		build->a.stack[i] = count;
+		i++;
+	}
+	i = 0;
+	while (i < build -> max_len)
+	{
+		build -> b.stack[i] = 0;
+		i++;
+	}
+}
+
+void	ft_no_double(t_stacks build)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < build.max_len)
+	{
+		j = i + 1;
+		while (j < build.max_len)
+		{
+			if (build.b.stack[i] == build.b.stack[j])
+				ft_error(5);
+			j++;
+		}
+		i++;
+	}
 }
 
 int	ft_calc_size(char **args)

@@ -6,7 +6,7 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 21:11:46 by amiguez           #+#    #+#              #
-#    Updated: 2022/02/28 19:39:17 by amiguez          ###   ########.fr        #
+#    Updated: 2022/03/18 09:37:01 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,10 @@ LST_SRCS	:= main.c\
 			fill.c\
 			debug.c\
 			isspace_split.c\
-			merge_char**.c
+			sorting.c\
+			rotate.c\
+			push.c\
+			swap.c
 LST_OBJS	:= $(LST_SRCS:.c=.o)
 LST_INCS	:= p_swap.h
 AR_LIBFT	:= libft.a

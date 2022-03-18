@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 09:45:05 by amiguez           #+#    #+#             */
-/*   Updated: 2022/03/02 17:41:22 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/03/18 10:03:31 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void		ft_forbiden_carac(char **ret);
 
 t_stacks	ft_fill_val(char **list_arg);
 int			ft_calc_size(char **args);
+void		ft_no_double(t_stacks build);
+void	ft_set_index(t_stacks *build);
 
 //isspace_split//
 
@@ -51,9 +53,26 @@ static int	ft_wordcount(char *str, char *charset);
 static int	ft_wordlen(char *str, char *charset);
 static int	ft_is_charset(char str, char *charset);
 
-//merge_char**//
+// //merge_char**//
 
-char		**ft_merge_d_str(char **str1, char **str2);
+// char		**ft_merge_d_str(char **str1, char **str2);
+
+//sorting//
+
+void	ft_sorting(t_stacks stacks);
+
+//push//
+
+void		ft_rotate(t_stacks *build, char sens);
+void		ft_sort2(t_stacks pwap);
+
+//rotate//
+
+void		ft_rotate(t_stacks *build, char sens);
+
+//swap//
+
+void		ft_swap(t_stacks *build, char sens);
 
 // *************************** //
 // *****  DEBUG   ************ //

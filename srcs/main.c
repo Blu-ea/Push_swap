@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 08:37:52 by amiguez           #+#    #+#             */
-/*   Updated: 2022/03/02 19:27:28 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/03/18 10:04:12 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,19 @@ char	**ft_parsec(int argc, char **argv)
 	char	**ret;
 	int		i;
 
-	i = 2;
+	i = 1;
 	if (argc == 1)
 		exit(0);
-	ret = ft_split_space(argv[1]);
-	while (i < argc)
+	if (argc == 2)
+		ret = ft_split_space(argv[1]);
+	else
 	{
-		ret = ft_merge_d_str(ret, ft_split_space(argv[i]));
-		i++;
+		ret = malloc(sizeof(char *) * (argc - 2));
+		while (i < argc)
+		{
+			ret[i - 1] = argv[i];
+			i++;
+		}
 	}
 	ft_forbiden_carac(ret);
 	return (ret);
@@ -56,7 +61,7 @@ void	ft_forbiden_carac(char **ret)
 		while (ret[i][j])
 		{
 			if (!ft_isdigit(ret[i][j]))
-				ft_error(3);
+				ft_error(1);
 			j++;
 		}
 		i++;
@@ -68,7 +73,7 @@ int	main(int argc, char **argv)
 	t_stacks	p_stacks;
 
 	p_stacks = ft_fill_val(ft_parsec(argc, argv));
-	debug_print_stack(p_stacks, "sa");
+	ft_sorting(p_stacks);
 	ft_free(&p_stacks);
 	return (0);
 }
