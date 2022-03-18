@@ -6,13 +6,13 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 09:22:35 by amiguez           #+#    #+#             */
-/*   Updated: 2022/03/18 09:41:08 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/03/18 13:34:17 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../p_swap.h"
 
-void ft_rotate(t_stacks *build, char sens)
+void ft_rotate(t_stacks *build)
 {
 	
 }

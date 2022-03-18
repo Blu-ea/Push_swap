@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 09:45:05 by amiguez           #+#    #+#             */
-/*   Updated: 2022/03/18 10:03:31 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/03/18 14:14:36 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,20 +59,24 @@ static int	ft_is_charset(char str, char *charset);
 
 //sorting//
 
-void	ft_sorting(t_stacks stacks);
+void		ft_sorting(t_stacks stacks);
+void		ft_is_done_sorting(t_stacks pwap);
+void		ft_sort2(t_stacks pwap, int len);
 
 //push//
 
-void		ft_rotate(t_stacks *build, char sens);
-void		ft_sort2(t_stacks pwap);
+void		ft_push_a_to_b(t_stacks *build);
+void		ft_push_b_to_a(t_stacks *build);
 
 //rotate//
 
-void		ft_rotate(t_stacks *build, char sens);
+void		ft_rotate(t_stacks *build);
 
 //swap//
 
-void		ft_swap(t_stacks *build, char sens);
+void		ft_swap_a(t_stacks *build);
+void		ft_swap_b(t_stacks *build);
+void		ft_swap_s(t_stacks *build);
 
 // *************************** //
 // *****  DEBUG   ************ //
