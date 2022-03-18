@@ -41,28 +41,28 @@
 	  -	Switch betweens the 2 first nbs in b
 	- ss:
 	  -	Do sa and sb
-	- [ ] Done
+	- [x] Done
 	- pa: Push on A
 	  -	push the first nbs of B on A
 	  		(nothing if B is empty)
 	- pb: Push on B
 	  -	push the first nbs of B on A
 	  		(nothing if B is empty)
-	- [ ] Done
+	- [x] Done
 	- ra: Rotate A
 	  -	Putt the first nbr of A in last and push up the other
 	- ra: Rotate B
 	  -	Putt the first nbr of B in last and push up the other
 	- rr:
 	  -	Do ra and rb
-	- [ ] Done
+	- [x] Done
 	- rra: Rotate Reverse Rotate A
 	  -	Putt the last nbr of A in first and push down the other
 	- rra: Rotate Reverse Rotate B
 	  -	Putt the last nbr of B in first and push down the other
 	- rrr:
 	  -	Do rra and rrb
-	- [ ] Done
+	- [x] Done
 (Go see subject for examples)
 
 
