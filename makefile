@@ -6,7 +6,7 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 21:11:46 by amiguez           #+#    #+#              #
-#    Updated: 2022/03/18 15:08:56 by amiguez          ###   ########.fr        #
+#    Updated: 2022/03/28 17:57:38 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ LST_SRCS	:= main.c\
 			debug.c\
 			isspace_split.c\
 			sorting.c\
+			sorting_big.c\
 			rotate.c\
 			reverse_rotate.c\
 			push.c\

@@ -6,13 +6,13 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 09:25:09 by amiguez           #+#    #+#             */
-/*   Updated: 2022/03/18 13:16:08 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/03/28 20:13:34 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../p_swap.h"
 
-void	ft_is_done_sorting(t_stacks pwap)
+int	ft_is_done_sorting(t_stacks pwap)
 {
 	int	i;
 	int	sorted;
@@ -28,36 +28,75 @@ void	ft_is_done_sorting(t_stacks pwap)
 			i++;
 		}
 	}
-	if (sorted == 1)
-		exit(0);
+	return (sorted);
 }
 
-void	ft_sorting(t_stacks pwap)
+void	ft_sorting(t_stacks *pwap)
 {
-	ft_is_done_sorting(pwap);
-	if (pwap.max_len == 2 || pwap.max_len == 3)
-		ft_sort2(pwap, pwap.max_len);
-}
-
-void	ft_sort2(t_stacks pwap, int len)
-{
-	if (len == 2)
-		ft_printf("sa\n");
+	if (ft_is_done_sorting(*pwap) == 1)
+		;
+	else if (pwap -> max_len == 2)
+		ft_sort2(pwap, 'a');
+	else if (pwap -> max_len == 3)
+		ft_sort3a(pwap);
+	else if (pwap -> max_len == 4)
+		ft_sort4(pwap);
+	else if (pwap -> max_len == 5)
+		ft_sort5(pwap);
 	else
+		ft_sort_big(pwap);
+}
+
+void	ft_sort2(t_stacks *pwap, char list)
+{
+	if (list == 'a' && pwap -> a.stack[0] > pwap -> a.stack[1])
+		ft_swap_a(pwap);
+	if (list == 'b' && pwap -> b.stack[0] > pwap -> b.stack[1])
+		ft_swap_b(pwap);
+}
+
+void	ft_sort3a(t_stacks *pwap)
+{
+	if (pwap -> a.stack[0] == 0)
 	{
-		if (pwap.a.stack[0] == 0)
-			ft_printf("sa\nra\n");
-		else if (pwap.a.stack[0] == 1)
-		{
-			if (pwap.a.stack[1] == 0)
-				ft_printf("sa\n");
-			else
-				ft_printf("rra\n");
-		}
-		else if (pwap.a.stack[1] == 1)
-			ft_printf("sa\nrra\n");
-		else
-			ft_printf("ra");
+		ft_swap_a(pwap);
+		ft_rotate_a(pwap);
 	}
-	exit(0);
+	else if (pwap -> a.stack[0] == 1)
+	{
+		if (pwap -> a.stack[1] == 0)
+			ft_swap_a(pwap);
+		else
+			ft_reverse_rotate_a(pwap);
+	}
+	else if (pwap -> a.stack[1] == 1)
+	{
+		ft_swap_a(pwap);
+		ft_reverse_rotate_a(pwap);
+	}
+	else
+		ft_rotate_a(pwap);
+}
+
+void	ft_sort3b(t_stacks *pwap)
+{
+	if (pwap -> b.stack[0] == 0)
+	{
+		ft_swap_b(pwap);
+		ft_rotate_b(pwap);
+	}
+	else if (pwap -> b.stack[0] == 1)
+	{
+		if (pwap -> b.stack[1] == 0)
+			ft_swap_b(pwap);
+		else
+			ft_reverse_rotate_b(pwap);
+	}
+	else if (pwap -> b.stack[1] == 1)
+	{
+		ft_swap_b(pwap);
+		ft_reverse_rotate_b(pwap);
+	}
+	else
+		ft_rotate_b(pwap);
 }
