@@ -6,7 +6,7 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 21:11:46 by amiguez           #+#    #+#              #
-#    Updated: 2022/03/28 17:57:38 by amiguez          ###   ########.fr        #
+#    Updated: 2022/03/30 21:42:39 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,26 +28,26 @@ LST_OBJS	:= $(LST_SRCS:.c=.o)
 LST_INCS	:= p_swap.h
 AR_LIBFT	:= libft.a
 
-# ///////////////////////////
+# /////////////////////////////////
 
 DIR_SRCS	:= srcs
 DIR_OBJS	:= .objs
 DIR_INCS	:= .
 DIR_ARLIB	:= libft
 
-# ///////////////////////////
+# /////////////////////////////////
 
 SRCS		:= $(addprefix $(DIR_SRCS)/,$(LST_SRCS))
 OBJS		:= $(addprefix $(DIR_OBJS)/,$(LST_OBJS))
 INCS		:= $(addprefix $(DIR_INCS)/,$(LST_INCS))
 LIBFT		:= $(addprefix $(DIR_ARLIB)/,$(AR_LIBFT))
 
-# ///////////////////////////
+# /////////////////////////////////
 
 CC		:= gcc
 CFLAGS	:= 
 
-# ///////////////////////////
+# /////////////////////////////////
 
 ERASE	=	\033[2K\r
 GREY	=	\033[30m
@@ -66,11 +66,11 @@ END		=	\033[0m
 NORMITEST = 
 NORMINETTE = $(shell norminette $(SRCS) $(INCS) | grep -i 'Error!')
 
-# ///////////////////////////
+# /////////////////////////////////
 
 all : $(NAME)
 
-$(NAME) : $(LIBFT) $(OBJS)
+$(NAME) : $(OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) $^ $(LIBFT) -o $(NAME)
 	printf "\n$(UNDER)$(BOLD)$(PINK)Push_swap is compiled !\n$(END)"
 
@@ -83,14 +83,13 @@ endif
 $(DIR_OBJS)/%.o : $(DIR_SRCS)/%.c $(INCS) Makefile | $(DIR_OBJS)
 	$(CC) $(CFLAGS) -I $(INCS) -c $< -o $@
 	printf "$(ERASE)Compiling .o : $(BLUE) $<$ $(END)"
-	
 
 $(DIR_OBJS) :
 	mkdir -p .objs
 
 $(LIBFT) :
 	make -C libft
-# ///////////////////////////
+# /////////////////////////////////
 
 clean :
 	rm -rf $(DIR_OBJS)
@@ -103,5 +102,5 @@ fclean : clean
 
 re : fclean all
 
-.PHONY : re fclean clean all $(LIBFT) 
+.PHONY : all clean fclean re $(LIBFT)
 .SILENT :

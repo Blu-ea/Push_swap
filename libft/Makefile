@@ -6,7 +6,7 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 06:10:49 by amiguez           #+#    #+#              #
-#    Updated: 2022/03/02 19:10:54 by amiguez          ###   ########.fr        #
+#    Updated: 2022/03/30 21:19:11 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,9 +67,9 @@ LST_INCS :=	libft.h
 
 # /////////////////////////////////
 
-DIR_SRCS :=	srcs
-DIR_OBJS :=	.objs
-DIR_INCS :=	.
+DIR_SRCS	:= srcs
+DIR_OBJS	:= .objs
+DIR_INCS	:= .
 
 # /////////////////////////////////
 
@@ -100,12 +100,11 @@ SUR		=	\033[7m
 END		=	\033[0m
 
 NORMITEST = 
-NORMINETTE = $(shell norminette $(SRCS) | grep -i 'Error')
-
+# NORMINETTE = $(shell norminette $(SRCS) | grep -i 'Error')
 
 # /////////////////////////////////
 
-all: $(NAME)
+all : $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
@@ -117,23 +116,23 @@ else
 	printf "$(RED)$(SUR)THERE IS AN ERROR WITH NORMINETTE IN LIBFT FILES !!$(END)\n"
 endif
 
-$(DIR_OBJS)/%.o: $(DIR_SRCS)/%.c $(INCS) Makefile | $(DIR_OBJS)
+$(DIR_OBJS)/%.o : $(DIR_SRCS)/%.c $(INCS) Makefile | $(DIR_OBJS)
 	$(CC) $(CFLAGS) -I $(DIR_INCS) -c $< -o $@
 	printf "$(ERASE)Compiling libft : $(BLUE) $<$(END)"
 
-$(DIR_OBJS):
+$(DIR_OBJS) :
 	mkdir -p $(DIR_OBJS)
 
 # /////////////////////////////////
 
-clean	:
+clean :
 	rm -rf $(DIR_OBJS)
 	printf "$(CYAN) /!\ $(END)Erasing .o in libft$(CYAN) /!\ \n$(END)"
 
-fclean	: clean
+fclean : clean
 	rm -rf $(NAME)
 	printf "$(RED) /!\ $(END)Erasing libft.a$(RED) /!\ \n$(END)"
-re		: fclean all
+re : fclean all
 
-.PHONY	: all clean fclean re 
-.SILENT	:
+.PHONY : all clean fclean re 
+.SILENT :
