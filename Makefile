@@ -6,7 +6,7 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 21:11:46 by amiguez           #+#    #+#              #
-#    Updated: 2022/03/30 21:42:39 by amiguez          ###   ########.fr        #
+#    Updated: 2022/03/30 23:04:16 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ LST_SRCS	:= main.c\
 			rotate.c\
 			reverse_rotate.c\
 			push.c\
-			swap.c
+			swap.c\
+			calc_position.c
 LST_OBJS	:= $(LST_SRCS:.c=.o)
 LST_INCS	:= p_swap.h
 AR_LIBFT	:= libft.a

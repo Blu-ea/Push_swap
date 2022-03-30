@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 17:48:41 by amiguez           #+#    #+#             */
-/*   Updated: 2022/03/28 18:53:06 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/03/30 23:41:37 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,15 @@ void	ft_sort5(t_stacks *pwap)
 			ft_reverse_rotate_a(pwap);
 			ft_push_a_to_b(pwap);
 		}
-		else
-		{
-			if (pwap -> a.stack[0] < 2)
+		else if (pwap -> a.stack[0] < 2)
 				ft_push_a_to_b(pwap);
+		else
 			ft_rotate_a(pwap);
-		}
 	}
-	ft_sort2(pwap, 'b');
-	
 	ft_sort3a(pwap);
+	ft_push_b_to_a(pwap);
+	ft_push_b_to_a(pwap);
+	ft_sort2(pwap, 'a');
 }
 
 void	ft_sort_big(t_stacks *pwap)
