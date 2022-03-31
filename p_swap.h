@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 09:45:05 by amiguez           #+#    #+#             */
-/*   Updated: 2022/03/28 19:05:08 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/03/31 18:20:35 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void		ft_sort3b(t_stacks *pwap);
 void		ft_sort4(t_stacks *pwap);
 void		ft_sort5(t_stacks *pwap);
 void		ft_sort_big(t_stacks *pwap);
+int			ft_get_index_max(t_build list);
 
 //calc_position//
 

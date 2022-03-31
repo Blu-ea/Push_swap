@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 09:25:09 by amiguez           #+#    #+#             */
-/*   Updated: 2022/03/30 23:38:10 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/03/30 23:53:59 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	ft_sort3b(t_stacks *pwap)
 		ft_swap_b(pwap);
 		ft_rotate_b(pwap);
 	}
-	else if (pwap -> b.stack[0] != ft_is_min(pwap->b) && pwap -> b.stack[0] != ft_is_min(pwap->b))
+	else if (pwap -> b.stack[0] != ft_is_min(pwap->b) && pwap -> b.stack[0] != ft_is_max(pwap->b))
 	{
 		if (pwap -> b.stack[1] == ft_is_min(pwap->b))
 			ft_swap_b(pwap);
