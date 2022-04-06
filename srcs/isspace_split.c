@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 18:55:40 by amiguez           #+#    #+#             */
-/*   Updated: 2022/02/28 21:08:42 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/06 21:56:01 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	ft_wordcount(char *str, char *charset)
 	return (j);
 }
 
-static char	*ft_strdupp(char *src, int j)
+static char	*ft_issstrdupp(char *src, int j)
 {
 	char	*dst;
 	int		i;
@@ -90,7 +90,7 @@ char	**ft_split_space(char const *s)
 		while (ft_is_charset((char)*s, charset))
 			s++;
 		j = ft_wordlen((char *)s, charset);
-		dest[i++] = ft_strdupp((char *)s, j);
+		dest[i++] = ft_issstrdupp((char *)s, j);
 		s += j;
 	}
 	dest[size] = 0;

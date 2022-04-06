@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:18:51 by amiguez           #+#    #+#             */
-/*   Updated: 2022/03/18 14:26:38 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/06 21:55:10 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ void	printf_test(int a)
 void	tab_print(char **tab)
 {
 	int	i;
-	int	j;
 
 	i = 0;
 	while (tab[i])

@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 09:45:05 by amiguez           #+#    #+#             */
-/*   Updated: 2022/04/06 14:47:25 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/06 22:24:12 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ void		ft_set_index(t_stacks *build);
 //isspace_split//
 
 char		**ft_split_space(char const *s);
-static char	*ft_strdupp(char *src, int j);
-static int	ft_wordcount(char *str, char *charset);
-static int	ft_wordlen(char *str, char *charset);
-static int	ft_is_charset(char str, char *charset);
+// static char	*ft_issstrdupp(char *src, int j);
+// static int	ft_wordcount(char *str, char *charset);
+// static int	ft_wordlen(char *str, char *charset);
+// static int	ft_is_charset(char str, char *charset);
 
 //sorting//
 
@@ -101,7 +101,7 @@ void		ft_swap_s(t_stacks *build);
 
 void		new_sorting_100(t_stacks *pwap);
 int			ft_nearestless(int chunk, t_build list);
-int	ft_chunkvide(t_build list, int chunk);
+int			ft_chunkvide(t_build list, int chunk);
 
 // *************************** //
 // *****  DEBUG   ************ //

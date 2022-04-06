@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 13:58:10 by amiguez           #+#    #+#             */
-/*   Updated: 2022/04/06 17:03:38 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/06 22:24:48 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	new_sorting_100(t_stacks *pwap)
 	int	i;
 	int	chunk;
 
-	chunk = pwap->max_len/12;
+	chunk = pwap->max_len/11;
 	i = 1;
 	while (pwap->a.len)
 	{

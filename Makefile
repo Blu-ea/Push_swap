@@ -6,7 +6,7 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 21:11:46 by amiguez           #+#    #+#              #
-#    Updated: 2022/04/06 14:24:03 by amiguez          ###   ########.fr        #
+#    Updated: 2022/04/06 21:43:53 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ LIBFT		:= $(addprefix $(DIR_ARLIB)/,$(AR_LIBFT))
 # /////////////////////////////////
 
 CC		:= gcc
-CFLAGS	:= 
+CFLAGS	:= -Wall -Werror -Wextra
 
 # /////////////////////////////////
 
