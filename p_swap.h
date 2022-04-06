@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 09:45:05 by amiguez           #+#    #+#             */
-/*   Updated: 2022/03/31 18:20:35 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/06 14:47:25 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,12 @@ void		ft_reverse_rotate_r(t_stacks *build);
 void		ft_swap_a(t_stacks *build);
 void		ft_swap_b(t_stacks *build);
 void		ft_swap_s(t_stacks *build);
+
+//newsorting//
+
+void		new_sorting_100(t_stacks *pwap);
+int			ft_nearestless(int chunk, t_build list);
+int	ft_chunkvide(t_build list, int chunk);
 
 // *************************** //
 // *****  DEBUG   ************ //

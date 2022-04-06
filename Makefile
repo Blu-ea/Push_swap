@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 21:11:46 by amiguez           #+#    #+#              #
-#    Updated: 2022/03/30 23:04:16 by amiguez          ###   ########.fr        #
+#    Updated: 2022/04/06 14:24:03 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ LST_SRCS	:= main.c\
 			reverse_rotate.c\
 			push.c\
 			swap.c\
-			calc_position.c
+			calc_position.c\
+			newsorting.c
 LST_OBJS	:= $(LST_SRCS:.c=.o)
 LST_INCS	:= p_swap.h
 AR_LIBFT	:= libft.a
@@ -82,8 +83,8 @@ else
 endif
 
 $(DIR_OBJS)/%.o : $(DIR_SRCS)/%.c $(INCS) Makefile | $(DIR_OBJS)
+	printf "$(ERASE)Compiling .o : $(BLUE) $<$ $(END) "
 	$(CC) $(CFLAGS) -I $(INCS) -c $< -o $@
-	printf "$(ERASE)Compiling .o : $(BLUE) $<$ $(END)"
 
 $(DIR_OBJS) :
 	mkdir -p .objs

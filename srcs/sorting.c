@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 09:25:09 by amiguez           #+#    #+#             */
-/*   Updated: 2022/03/30 23:53:59 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/06 17:14:15 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,10 @@ void	ft_sorting(t_stacks *pwap)
 		ft_sort4(pwap);
 	else if (pwap -> max_len == 5)
 		ft_sort5(pwap);
-	else
+	else if (pwap -> max_len <= 100)
 		ft_sort_big(pwap);
+	else
+		new_sorting_100(pwap);
 }
 
 void	ft_sort2(t_stacks *pwap, char list)

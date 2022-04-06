@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 08:37:52 by amiguez           #+#    #+#             */
-/*   Updated: 2022/03/31 18:43:02 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/06 13:14:18 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,8 @@ int	main(int argc, char **argv)
 	t_stacks	p_stacks;
 
 	p_stacks = ft_fill_val(ft_parsec(argc, argv));
-	ft_sorting(&p_stacks);
 	// debug_print_stack(p_stacks, "al");
+	ft_sorting(&p_stacks);
 	ft_free(&p_stacks);
 	return (0);
 }
