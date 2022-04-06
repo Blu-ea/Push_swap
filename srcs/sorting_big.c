@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 17:48:41 by amiguez           #+#    #+#             */
-/*   Updated: 2022/03/31 19:33:28 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/06 13:04:20 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,4 +115,4 @@ int	ft_get_index_max(t_build list)
 	return(-1);
 }
 
-void	ft_rotate()
+// void	ft_rotate()
