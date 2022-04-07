@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 13:58:10 by amiguez           #+#    #+#             */
-/*   Updated: 2022/04/06 22:24:48 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/07 20:04:24 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 void	new_sorting_100(t_stacks *pwap)
 {
-	int	test = 200;
 	int	i;
 	int	chunk;
 
-	chunk = pwap->max_len/11;
+	chunk = pwap->max_len / 11;
 	i = 1;
 	while (pwap->a.len)
 	{
@@ -30,7 +29,6 @@ void	new_sorting_100(t_stacks *pwap)
 			ft_push_a_to_b(pwap);
 		if (ft_chunkvide(pwap -> a, chunk * i) == 0)
 			i++;
-		test--;
 	}
 	while (pwap->b.len)
 	{
@@ -39,19 +37,15 @@ void	new_sorting_100(t_stacks *pwap)
 		else if (pwap->b.stack[0] == ft_is_max(pwap->b) - 1)
 		{
 			ft_push_b_to_a(pwap);
-			while (1)
+			while (pwap->b.stack[0] != ft_is_max(pwap->b))
 			{
-				if (pwap->b.stack[0] == ft_is_max(pwap->b))
-				{
-					ft_push_b_to_a(pwap);
-					ft_swap_a(pwap);
-					break;
-				}
-				else if (ft_get_index_max(pwap->b) < pwap->b.len / 2)
+				if (ft_get_index_max(pwap->b) < pwap->b.len / 2)
 					ft_rotate_b(pwap);
 				else
 					ft_reverse_rotate_b(pwap);
 			}
+			ft_push_b_to_a(pwap);
+			ft_swap_a(pwap);
 		}
 		else if (ft_get_index_max(pwap->b) < pwap->b.len / 2)
 			ft_rotate_b(pwap);

@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 09:45:05 by amiguez           #+#    #+#             */
-/*   Updated: 2022/04/06 22:24:12 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/07 20:14:23 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void		ft_error(int i);
 char		**ft_parsec(int argc, char **argv);
 int			main(int argc, char **argv);
 void		ft_forbiden_carac(char **ret);
+void		ft_free(t_stacks *stacks);
 
 //fill//
 
@@ -67,12 +68,14 @@ void		ft_sort3b(t_stacks *pwap);
 void		ft_sort4(t_stacks *pwap);
 void		ft_sort5(t_stacks *pwap);
 void		ft_sort_big(t_stacks *pwap);
+int			ft_get_index_min(t_build list);
 int			ft_get_index_max(t_build list);
 
 //calc_position//
 
 int			ft_is_max(t_build list);
 int			ft_is_min(t_build list);
+void		ft_no_double(t_stacks build);
 
 //push//
 
