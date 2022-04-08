@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 08:37:52 by amiguez           #+#    #+#             */
-/*   Updated: 2022/04/06 13:14:18 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/08 10:42:22 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,12 @@ void	ft_forbiden_carac(char **ret)
 int	main(int argc, char **argv)
 {
 	t_stacks	p_stacks;
+	char		**list_arg;
 
-	p_stacks = ft_fill_val(ft_parsec(argc, argv));
+	list_arg = ft_parsec(argc, argv);
+	printf_test(1);
+	p_stacks = ft_fill_val(list_arg);
+	printf_test(0);
 	// debug_print_stack(p_stacks, "al");
 	ft_sorting(&p_stacks);
 	ft_free(&p_stacks);

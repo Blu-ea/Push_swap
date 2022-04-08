@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 09:45:05 by amiguez           #+#    #+#             */
-/*   Updated: 2022/04/07 20:14:23 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/08 10:37:17 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ t_stacks	ft_fill_val(char **list_arg);
 int			ft_calc_size(char **args);
 void		ft_no_double(t_stacks build);
 void		ft_set_index(t_stacks *build);
+//void		ft_free_list_arg(char ***list);
 
 //isspace_split//
 
