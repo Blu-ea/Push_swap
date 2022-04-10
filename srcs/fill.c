@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 18:54:41 by amiguez           #+#    #+#             */
-/*   Updated: 2022/04/07 20:12:25 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/08 20:16:27 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	ft_free_list_arg(char **list)
 {
-	int	i;
+	// int	i;
 
-	i = 0;
-	while (list[i])
-	{
-		free(list[i]);
-		i++;
-	}
+	// i = 0;
+	// while (list[i])
+	// {
+	// 	free(*list[i]);
+	// 	i++;
+	// }
 	free(list);
 }
 
