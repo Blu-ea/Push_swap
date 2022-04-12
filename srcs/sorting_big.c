@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 17:48:41 by amiguez           #+#    #+#             */
-/*   Updated: 2022/04/06 17:13:56 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/12 03:05:21 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_sort4(t_stacks *pwap)
 			ft_push_a_to_b(pwap);
 		}
 		else if (pwap -> a.stack[0] < 2)
-				ft_push_a_to_b(pwap);
+			ft_push_a_to_b(pwap);
 		else
 			ft_rotate_a(pwap);
 	}
@@ -62,7 +62,7 @@ void	ft_sort_big(t_stacks *pwap)
 
 	while (pwap->a.len)
 	{
-		mid = (ft_is_min(pwap -> a) + ft_is_max(pwap -> a)) *0.50;
+		mid = (ft_is_min(pwap -> a) + ft_is_max(pwap -> a)) * 0.50;
 		if (pwap->a.stack[0] <= mid)
 			ft_push_a_to_b(pwap);
 		else if (pwap -> a.stack[pwap->a.len] >= mid)
@@ -71,6 +71,11 @@ void	ft_sort_big(t_stacks *pwap)
 			ft_rotate_a(pwap);
 	}
 	ft_push_b_to_a(pwap);
+	ft_sorting_big2(pwap);
+}
+
+void	ft_sorting_big2(t_stacks *pwap)
+{
 	while (pwap->b.len)
 	{
 		if (pwap->b.stack[0] == ft_is_max(pwap->b))
@@ -78,19 +83,15 @@ void	ft_sort_big(t_stacks *pwap)
 		else if (pwap->b.stack[0] == ft_is_max(pwap->b) - 1)
 		{
 			ft_push_b_to_a(pwap);
-			while (1)
+			while (pwap->b.stack[0] != ft_is_max(pwap->b))
 			{
-				if (pwap->b.stack[0] == ft_is_max(pwap->b))
-				{
-					ft_push_b_to_a(pwap);
-					ft_swap_a(pwap);
-					break;
-				}
-				else if (ft_get_index_max(pwap->b) < pwap->b.len / 2)
+				if (ft_get_index_max(pwap->b) < pwap->b.len / 2)
 					ft_rotate_b(pwap);
 				else
 					ft_reverse_rotate_b(pwap);
 			}
+			ft_push_b_to_a(pwap);
+			ft_swap_a(pwap);
 		}
 		else if (ft_get_index_max(pwap->b) < pwap->b.len / 2)
 			ft_rotate_b(pwap);
@@ -112,7 +113,5 @@ int	ft_get_index_max(t_build list)
 			return (i);
 		i++;
 	}
-	return(-1);
+	return (-1);
 }
-
-// void	ft_rotate()

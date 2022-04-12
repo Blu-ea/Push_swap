@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 13:58:10 by amiguez           #+#    #+#             */
-/*   Updated: 2022/04/07 20:04:24 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/12 02:59:48 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ void	new_sorting_100(t_stacks *pwap)
 		if (ft_chunkvide(pwap -> a, chunk * i) == 0)
 			i++;
 	}
+}
+
+void	ft_newsorting_100_2(t_stacks *pwap)
+{
 	while (pwap->b.len)
 	{
 		if (pwap->b.stack[0] == ft_is_max(pwap->b))

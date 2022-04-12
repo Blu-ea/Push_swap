@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 18:55:40 by amiguez           #+#    #+#             */
-/*   Updated: 2022/04/06 21:56:01 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/12 03:40:32 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	ft_wordcount(char *str, char *charset)
 	return (j);
 }
 
-static char	*ft_issstrdupp(char *src, int j)
+static char	*ft_issstrdupp(char *src, int j, t_stacks *lst)
 {
 	char	*dst;
 	int		i;
@@ -59,7 +59,7 @@ static char	*ft_issstrdupp(char *src, int j)
 	i = 0;
 	dst = malloc((j + 1) * sizeof(char));
 	if (!dst)
-		ft_error(2);
+		ft_error(2, lst);
 	while (i < j && src[i])
 	{
 		dst[i] = src[i];
@@ -69,7 +69,7 @@ static char	*ft_issstrdupp(char *src, int j)
 	return (dst);
 }
 
-char	**ft_split_space(char const *s)
+char	**ft_split_space(char const *s, t_stacks *lst)
 {
 	char	**dest;
 	int		size;
@@ -78,19 +78,19 @@ char	**ft_split_space(char const *s)
 	char	*charset;
 
 	if (!s)
-		ft_error(3);
+		ft_error(3, lst);
 	charset = "\t\n\v\f\r ";
 	i = 0;
 	size = ft_wordcount((char *)s, charset);
 	dest = malloc((size + 1) * sizeof(char *));
 	if (!dest)
-		ft_error(4);
+		ft_error(4, lst);
 	while (i < size)
 	{
 		while (ft_is_charset((char)*s, charset))
 			s++;
 		j = ft_wordlen((char *)s, charset);
-		dest[i++] = ft_issstrdupp((char *)s, j);
+		dest[i++] = ft_issstrdupp((char *)s, j, lst);
 		s += j;
 	}
 	dest[size] = 0;

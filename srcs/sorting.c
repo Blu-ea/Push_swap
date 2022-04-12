@@ -6,14 +6,15 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 09:25:09 by amiguez           #+#    #+#             */
-/*   Updated: 2022/04/06 17:14:15 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/12 03:00:31 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../p_swap.h"
 
 //1 = tri fini totalement
-//2 = tri fini dans la liste a mais pas complet (des restes sont présent dans b))
+//2 = tri fini dans la liste a mais pas complet
+//	(des restes sont présent dans b))
 //0 = tri pas fini
 
 int	ft_is_done_sorting(t_stacks pwap)
@@ -69,14 +70,16 @@ void	ft_sort3a(t_stacks *pwap)
 		ft_swap_a(pwap);
 		ft_rotate_a(pwap);
 	}
-	else if (pwap -> a.stack[0] != ft_is_min(pwap->a) && pwap -> a.stack[0] != ft_is_max(pwap->a))
+	else if (pwap -> a.stack[0] != ft_is_min(pwap->a)
+		&& pwap -> a.stack[0] != ft_is_max(pwap->a))
 	{
 		if (pwap -> a.stack[1] == ft_is_min(pwap->a))
 			ft_swap_a(pwap);
 		else
 			ft_reverse_rotate_a(pwap);
 	}
-	else if (pwap -> a.stack[1] != ft_is_min(pwap->a) && pwap -> a.stack[1] != ft_is_max(pwap->a))
+	else if (pwap -> a.stack[1] != ft_is_min(pwap->a)
+		&& pwap -> a.stack[1] != ft_is_max(pwap->a))
 	{
 		ft_swap_a(pwap);
 		ft_reverse_rotate_a(pwap);
@@ -88,20 +91,22 @@ void	ft_sort3a(t_stacks *pwap)
 void	ft_sort3b(t_stacks *pwap)
 {
 	if (ft_is_done_sorting(*pwap) == 2)
-		return;
+		return ;
 	if (pwap -> b.stack[0] == ft_is_min(pwap->b))
 	{
 		ft_swap_b(pwap);
 		ft_rotate_b(pwap);
 	}
-	else if (pwap -> b.stack[0] != ft_is_min(pwap->b) && pwap -> b.stack[0] != ft_is_max(pwap->b))
+	else if (pwap -> b.stack[0] != ft_is_min(pwap->b)
+		&& pwap -> b.stack[0] != ft_is_max(pwap->b))
 	{
 		if (pwap -> b.stack[1] == ft_is_min(pwap->b))
 			ft_swap_b(pwap);
 		else
 			ft_reverse_rotate_b(pwap);
 	}
-	else if (pwap -> b.stack[1] != ft_is_min(pwap->b) && pwap -> b.stack[1] != ft_is_max(pwap->b))
+	else if (pwap -> b.stack[1] != ft_is_min(pwap->b)
+		&& pwap -> b.stack[1] != ft_is_max(pwap->b))
 	{
 		ft_swap_b(pwap);
 		ft_reverse_rotate_b(pwap);

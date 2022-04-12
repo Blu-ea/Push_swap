@@ -6,22 +6,25 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 18:54:41 by amiguez           #+#    #+#             */
-/*   Updated: 2022/04/08 20:16:27 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/12 03:44:44 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../p_swap.h"
 
-void	ft_free_list_arg(char **list)
+void	ft_free_list_arg(char **list, int argc)
 {
-	// int	i;
+	int	i;
 
-	// i = 0;
-	// while (list[i])
-	// {
-	// 	free(*list[i]);
-	// 	i++;
-	// }
+	i = 0;
+	if (argc == 2)
+	{
+		while (list[i])
+		{
+			free(list[i]);
+			i++;
+		}
+	}
 	free(list);
 }
 
@@ -35,14 +38,14 @@ void	ft_verif_back(t_stacks build_stacks, char **list_arg, int i)
 		&& (ft_strncmp("-0", (list_arg[i]),
 				ft_strlen(list_arg[i]))))
 	{
-		ft_free(&build_stacks);
+		ft_free(&build_stacks, 1);
 		free(c);
-		ft_error(10);
+		ft_error(10, &build_stacks);
 	}
 	free(c);
 }
 
-t_stacks	ft_fill_val(char **list_arg)
+t_stacks	ft_fill_val(char **list_arg, int argc)
 {
 	t_stacks	build_stacks;
 	int			i;
@@ -50,17 +53,21 @@ t_stacks	ft_fill_val(char **list_arg)
 	i = 0;
 	build_stacks.max_len = ft_calc_size(list_arg);
 	build_stacks.a.stack = malloc(sizeof(int) * (build_stacks.max_len + 1));
-	build_stacks.a.stack[build_stacks.max_len] = -1;
-	build_stacks.a.len = build_stacks.max_len;
+	if (!build_stacks.a.stack)
+		ft_error(11, &build_stacks);
 	build_stacks.b.stack = malloc(sizeof(int) * (build_stacks.max_len + 1));
+	if (!build_stacks.b.stack)
+		ft_error(12, &build_stacks);
+	build_stacks.a.stack[build_stacks.max_len] = -1;
 	build_stacks.b.stack[build_stacks.max_len] = -1;
+	build_stacks.a.len = build_stacks.max_len;
 	while (i < build_stacks.max_len)
 	{
 		build_stacks.b.stack[i] = ft_atoi(list_arg[i]);
 		ft_verif_back(build_stacks, list_arg, i);
 		i++;
 	}
-	ft_free_list_arg(list_arg);
+	ft_free_list_arg(list_arg, argc);
 	ft_no_double(build_stacks);
 	ft_set_index(&build_stacks);
 	return (build_stacks);

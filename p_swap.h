@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 09:45:05 by amiguez           #+#    #+#             */
-/*   Updated: 2022/04/08 10:37:17 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/12 03:40:13 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,23 +34,23 @@ typedef struct s_stacks
 // *************************** //
 //main//
 
-void		ft_error(int i);
-char		**ft_parsec(int argc, char **argv);
+void		ft_error(int i, t_stacks *lst);
+char		**ft_parsec(int argc, char **argv, t_stacks *lst);
 int			main(int argc, char **argv);
 void		ft_forbiden_carac(char **ret);
-void		ft_free(t_stacks *stacks);
+void		ft_free(t_stacks *stacks, int lst);
 
 //fill//
 
-t_stacks	ft_fill_val(char **list_arg);
+t_stacks	ft_fill_val(char **list_arg, int argc);
 int			ft_calc_size(char **args);
 void		ft_no_double(t_stacks build);
 void		ft_set_index(t_stacks *build);
-//void		ft_free_list_arg(char ***list);
+//void		ft_free_list_arg(char **list, int argc);
 
 //isspace_split//
 
-char		**ft_split_space(char const *s);
+char		**ft_split_space(char const *s, t_stacks *lst);
 // static char	*ft_issstrdupp(char *src, int j);
 // static int	ft_wordcount(char *str, char *charset);
 // static int	ft_wordlen(char *str, char *charset);
@@ -69,7 +69,7 @@ void		ft_sort3b(t_stacks *pwap);
 void		ft_sort4(t_stacks *pwap);
 void		ft_sort5(t_stacks *pwap);
 void		ft_sort_big(t_stacks *pwap);
-int			ft_get_index_min(t_build list);
+void		ft_sorting_big2(t_stacks *pwap);
 int			ft_get_index_max(t_build list);
 
 //calc_position//

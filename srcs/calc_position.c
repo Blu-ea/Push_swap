@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 18:53:41 by amiguez           #+#    #+#             */
-/*   Updated: 2022/04/07 19:58:21 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/12 03:39:31 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_no_double(t_stacks build)
 		while (j < build.max_len)
 		{
 			if (build.b.stack[i] == build.b.stack[j])
-				ft_error(5);
+				ft_error(5, &build);
 			j++;
 		}
 		i++;
