@@ -1,7 +1,0 @@
-Fixes for double free 
-
- Happend only when i free list_arg one per one in the fill 
-
- segfault if the fonc take &list_arg
- maybe with the new main, but need to make all free happend even if malloc crash
- So rebuild is needed on the 1st part later on

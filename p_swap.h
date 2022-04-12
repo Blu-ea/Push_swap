@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 09:45:05 by amiguez           #+#    #+#             */
-/*   Updated: 2022/04/12 03:40:13 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/12 04:05:47 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,14 @@ void		ft_sort4(t_stacks *pwap);
 void		ft_sort5(t_stacks *pwap);
 void		ft_sort_big(t_stacks *pwap);
 void		ft_sorting_big2(t_stacks *pwap);
-int			ft_get_index_max(t_build list);
 
 //calc_position//
 
 int			ft_is_max(t_build list);
 int			ft_is_min(t_build list);
 void		ft_no_double(t_stacks build);
+int			ft_get_index_max(t_build list);
+int			ft_get_index_min(t_build list);
 
 //push//
 
@@ -104,6 +105,7 @@ void		ft_swap_s(t_stacks *build);
 //newsorting//
 
 void		new_sorting_100(t_stacks *pwap);
+void		ft_newsorting_100_2(t_stacks *pwap);
 int			ft_nearestless(int chunk, t_build list);
 int			ft_chunkvide(t_build list, int chunk);
 

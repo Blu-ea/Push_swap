@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 17:48:41 by amiguez           #+#    #+#             */
-/*   Updated: 2022/04/12 03:05:21 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/12 04:04:35 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,20 +98,4 @@ void	ft_sorting_big2(t_stacks *pwap)
 		else
 			ft_reverse_rotate_b(pwap);
 	}
-}
-
-int	ft_get_index_max(t_build list)
-{
-	int	index;
-	int	i;
-
-	i = 0;
-	index = ft_is_max(list);
-	while (i < list.len)
-	{
-		if (index == list.stack[i])
-			return (i);
-		i++;
-	}
-	return (-1);
 }
