@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 09:45:05 by amiguez           #+#    #+#             */
-/*   Updated: 2022/04/12 04:05:47 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/12 04:18:15 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,8 +112,8 @@ int			ft_chunkvide(t_build list, int chunk);
 // *************************** //
 // *****  DEBUG   ************ //
 
-void		debug_print_stack(t_stacks stacks, char *param);
-void		printf_test(int a);
-void		tab_print(char **tab);
+// void		debug_print_stack(t_stacks stacks, char *param);
+// void		printf_test(int a);
+// void		tab_print(char **tab);
 
 #endif

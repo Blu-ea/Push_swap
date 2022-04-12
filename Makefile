@@ -6,7 +6,7 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 21:11:46 by amiguez           #+#    #+#              #
-#    Updated: 2022/04/06 21:43:53 by amiguez          ###   ########.fr        #
+#    Updated: 2022/04/12 04:18:09 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,6 @@ NAME = push_swap
 
 LST_SRCS	:= main.c\
 			fill.c\
-			debug.c\
 			isspace_split.c\
 			sorting.c\
 			sorting_big.c\
