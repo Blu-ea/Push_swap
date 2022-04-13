@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 08:37:52 by amiguez           #+#    #+#             */
-/*   Updated: 2022/04/12 03:51:56 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/04/13 07:09:55 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	**ft_parsec(int argc, char **argv, t_stacks *lst)
 		ret = ft_split_space(argv[1], lst);
 	else
 	{
-		ret = malloc(sizeof(char *) * (argc - 1));
+		ret = malloc(sizeof(char *) * (argc));
 		if (!ret)
 			ft_error(6, lst);
 		ret[argc - 1] = 0;
