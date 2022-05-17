@@ -86,7 +86,7 @@ $(DIR_OBJS)/%.o : $(DIR_SRCS)/%.c $(INCS) Makefile | $(DIR_OBJS)
 	$(CC) $(CFLAGS) -I $(INCS) -c $< -o $@
 
 $(DIR_OBJS) :
-	mkdir -p .objs
+	mkdir -p $@
 
 $(LIBFT) :
 	make -C libft
