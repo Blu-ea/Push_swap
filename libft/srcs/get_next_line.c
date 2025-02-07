@@ -15,7 +15,7 @@
 char	*get_next_line(int fd)
 {
 	char		*line;
-	char static	stat[OPEN_MAX][BUFFER_SIZE + 1];
+	static char	stat[255][BUFFER_SIZE + 1];
 	char		temp[BUFFER_SIZE + 1];
 	int			i;
 
@@ -57,7 +57,7 @@ int	chek_nl(char *line)
 	return (-1);
 }
 
-void	set_nl(char *line, char *stat)
+void	set_nl(char *line, char stat[BUFFER_SIZE + 1])
 {
 	char	*temp;
 	int		i;

@@ -83,7 +83,7 @@ endif
 
 $(DIR_OBJS)/%.o : $(DIR_SRCS)/%.c $(INCS) Makefile | $(DIR_OBJS)
 	printf "$(ERASE)Compiling .o : $(BLUE) $<$ $(END) "
-	$(CC) $(CFLAGS) -I $(INCS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(DIR_OBJS) :
 	mkdir -p $@
