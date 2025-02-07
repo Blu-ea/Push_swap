@@ -18,7 +18,9 @@ void	ft_swap_a(t_stacks *build)
 
 	if (build -> a.len <= 1)
 		return ;
-	 
+	swap = build -> a.stack[0];
+	build -> a.stack[0] = build -> a.stack[1];
+	build -> a.stack[1] = swap;
 	ft_printf("sa\n");
 }
 
